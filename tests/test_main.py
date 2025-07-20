@@ -7,7 +7,7 @@ import io
 import random
 import tempfile
 import pytest
-from main import load_words, choose_word, is_word_guessed, display_progress, check_word_guess
+from main import load_words, choose_word, is_word_guessed, display_progress, check_word_guess, parse_args
 
 
 def test_load_words(tmp_path):
@@ -55,3 +55,17 @@ def test_check_word_guess_true():
 
 def test_check_word_guess_false():
     assert not check_word_guess("puzzle", "raider")
+
+
+def test_parse_args_defaults(monkeypatch):
+    monkeypatch.setattr(sys, "argv", ["word-raider"])
+    args = parse_args()
+    assert args.word_file == "words.txt"
+    assert args.max_attempts == 6
+
+
+def test_parse_args_custom(monkeypatch):
+    monkeypatch.setattr(sys, "argv", ["word-raider", "-f", "custom.txt", "-a", "8"])
+    args = parse_args()
+    assert args.word_file == "custom.txt"
+    assert args.max_attempts == 8

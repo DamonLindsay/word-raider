@@ -1,5 +1,30 @@
 import random
+import argparse
 from typing import List
+
+
+def parse_args() -> argparse.Namespace:
+    """
+    Parse command-line arguments for Word Raider.
+
+    :return: Namespace with 'word_file' and 'max_attempts'.
+    """
+    parser = argparse.ArgumentParser(
+        prog="Word Raider",
+        description="Play an interactive word-guessing game."
+    )
+    parser.add_argument(
+        "-f", "--word-file",
+        default="words.txt",
+        help="Path to the word bank file."
+    )
+    parser.add_argument(
+        "-a", "--max-attempts",
+        type=int,
+        default=6,
+        help="Maximum number of incorrect guesses allowed."
+    )
+    return parser.parse_args()
 
 
 def check_word_guess(guess: str, secret: str) -> bool:
@@ -77,10 +102,11 @@ def main() -> None:
     """
     Run the Word Raider game: load words, choose secret, track guesses, and loop until win/lose.
     """
-    words = load_words()
+    args = parse_args()
+    words = load_words(args.word_file)
     secret = choose_word(words)
+    max_attempts = args.max_attempts
     print("Welcome to Word Raider!\nGuess the secret word, one letter at a time.")
-    max_attempts = 6
     attempts = 0
     guesses: List[str] = []
 
