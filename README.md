@@ -1,4 +1,5 @@
 # Word Raider 🎮
+![CI](https://github.com/DamonLindsay/word-raider/actions/workflows/python-app.yml/badge.svg)
 
 ## 📋 Overview
 
@@ -13,31 +14,34 @@ Word Raider is an interactive, command-line word-guessing game written in Python
 - Continuous Integration (CI) suite running tests across Python versions 3.8-3.11
 
 ## 🚀 Installation
-1. **Clone the repository**
-```
+`1.` **Clone the repository**
+```bash
 git clone https://github.com/DamonLindsay/word-raider.git
 cd word-raider
 ```
-2. **Create and activate a virtual environment**
+`2.` **Create and activate a virtual environment**
 ```
 python -m venv .venv
-source .venv/bin/activate   # Linux / macOS
-.\.venv\Scripts\activate    # Windows PowerShell
+# Linux / macOS
+source .venv/bin/activate
+# Windows PowerShell   
+.\.venv\Scripts\activate    
+
 ```
-3. **Install dependencies**
+`3.` **Install dependencies**
 ```
-pip install -r requirements.txt     # if you have other dependencies
+pip install -r requirements.txt     # if additional dependencies exist
 pip install pytest                  # for running tests
 ```
 
 ## 🏃‍♂️ Usage
 Run the game with default settings:
-```
+```bash
 python main.py
 ```
 Specify a custom Word file and/or maximum attempts:
 ```
-python main.py --word-file custom_words.txt -- max-attempts 8
+python main.py --word-file custom_words.txt --max-attempts 8
 ```
 
 ## 🧪 Testing
@@ -48,12 +52,12 @@ pytest -q
 Make sure your virtual environment is active so it uses the correct Python interpreter.
 
 ## 🤝 Contributing
-1. Fork the repo and create a feature branch:
+`1.` Fork the repo and create a feature branch:
 ```
 git checkout -b feature/YourFeature git add . git commit -m "feat: add My New Feature"
 ```
-2. Push your branch and open a Pull Request on Github.
-3. CI will run automatically; ensure all tests pass before requesting a review.
+`2.` Push your branch and open a Pull Request on GitHub.
+`3.` CI will run automatically; ensure all tests pass before requesting a review.
 
 ## 📄 License
 This project is licensed under the [MIT License](LICENSE)
