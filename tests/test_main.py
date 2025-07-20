@@ -7,7 +7,7 @@ import io
 import random
 import tempfile
 import pytest
-from main import load_words, choose_word, is_word_guessed, display_progress
+from main import load_words, choose_word, is_word_guessed, display_progress, check_word_guess
 
 
 def test_load_words(tmp_path):
@@ -47,3 +47,11 @@ def test_display_progress(capsys):
     captured = capsys.readouterr()
     # Expect underscores for missing letters
     assert "d _ g" in captured.out
+
+
+def test_check_word_guess_true():
+    assert check_word_guess("raider", "raider")
+
+
+def test_check_word_guess_false():
+    assert not check_word_guess("puzzle", "raider")
