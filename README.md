@@ -57,6 +57,7 @@ Make sure your virtual environment is active so it uses the correct Python inter
 git checkout -b feature/YourFeature git add . git commit -m "feat: add My New Feature"
 ```
 `2.` Push your branch and open a Pull Request on GitHub.
+
 `3.` CI will run automatically; ensure all tests pass before requesting a review.
 
 ## 📄 License
