@@ -1,5 +1,5 @@
 # Word Raider 🎮
-![CI](https://github.com/DamonLindsay/word-raider/actions/workflows/python-app.yml/badge.svg)
+![CI](https://github.com/DamonLindsay/word-raider/actions/workflows/python-app.yml/badge.svg?branch=main)
 
 ## 📋 Overview
 
